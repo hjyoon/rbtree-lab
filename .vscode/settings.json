@@ -1,0 +1,18 @@
+{
+  "files.associations": {
+    "array": "c",
+    "hash_map": "c",
+    "string_view": "c",
+    "format": "c",
+    "initializer_list": "c",
+    "span": "c",
+    "chrono": "c",
+    "stdbool.h": "c",
+    "assert.h": "c",
+    "rbtree.h": "c",
+    "string": "c",
+    "cstdlib": "c",
+    "random": "c"
+  },
+  "C_Cpp.errorSquiggles": "disabled"
+}

@@ -24,7 +24,7 @@ void test_insert_single(const key_t key) {
   assert(p != NULL);
   assert(t->root == p);
   assert(p->key == key);
-  // assert(p->color == RBTREE_BLACK);  // color of root node should be black
+  assert(p->color == RBTREE_BLACK);  // color of root node should be black
 #ifdef SENTINEL
   assert(p->left == t->nil);
   assert(p->right == t->nil);
@@ -358,8 +358,13 @@ void test_find_erase_rand(const size_t n, const unsigned int seed) {
   rbtree *t = new_rbtree();
   key_t *arr = calloc(n, sizeof(key_t));
   for (int i = 0; i < n; i++) {
-    arr[i] = rand();
+    arr[i] = rand() % 20;
   }
+
+  // for(int i=0; i<n; i++) {
+  //   printf("%d ", arr[i]);
+  // }
+  // printf("\n");
 
   test_find_erase(t, arr, n);
 
@@ -379,5 +384,6 @@ int main(void) {
   test_duplicate_values();
   test_multi_instance();
   test_find_erase_rand(10000, 17);
+  test_find_erase_rand(13, 17);
   printf("Passed all tests!\n");
 }
